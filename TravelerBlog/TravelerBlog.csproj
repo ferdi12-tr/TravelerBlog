@@ -140,9 +140,9 @@
     <Compile Include="Migrations\202312212016037_AddTables.designer.cs">
       <DependentUpon>202312212016037_AddTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312212019299_AddTables2.cs" />
-    <Compile Include="Migrations\202312212019299_AddTables2.designer.cs">
-      <DependentUpon>202312212019299_AddTables2.cs</DependentUpon>
+    <Compile Include="Migrations\202312212025173_addRoleIDToUser.cs" />
+    <Compile Include="Migrations\202312212025173_addRoleIDToUser.designer.cs">
+      <DependentUpon>202312212025173_addRoleIDToUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BlogCityRelation.cs" />
@@ -245,8 +245,8 @@
     <EmbeddedResource Include="Migrations\202312212016037_AddTables.resx">
       <DependentUpon>202312212016037_AddTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312212019299_AddTables2.resx">
-      <DependentUpon>202312212019299_AddTables2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312212025173_addRoleIDToUser.resx">
+      <DependentUpon>202312212025173_addRoleIDToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
