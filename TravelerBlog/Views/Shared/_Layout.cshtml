@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="~/Content/assets/css/all.min.css">
     <link rel="stylesheet" href="~/Content/assets/css/simple-line-icons.css">
     <link rel="stylesheet" href="~/Content/assets/css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body class="page-home">
@@ -44,31 +45,15 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <a href="03_city-listings">Listings<span class="uk-icon" data-uk-icon="chevron-down"></span></a>
-                                            <div class="uk-navbar-dropdown">
-                                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                    <li><a href="03_city-listings.html">City listings map</a></li>
-                                                    <li><a href="04_city-listings-no-map.html">City listings</a></li>
-                                                    <li> <a href="05_city-place.html">City place</a></li>
-                                                </ul>
-                                            </div>
+                                            @Html.ActionLink("City List", "Index", "City")
                                         </li>
                                         <li>
-                                            <a href="08_blog-grid.html">Pages<span class="uk-icon" data-uk-icon="chevron-down"></span></a>
-                                            <div class="uk-navbar-dropdown">
-                                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                    <li><a href="06_about.html">About</a></li>
-                                                    <li><a href="08_blog-grid.html">Blog grid</a></li>
-                                                    <li><a href="07_blog.html">Blog list</a></li>
-                                                    <li><a href="09_blog-post.html">Blog post</a></li>
-                                                    <li><a href="10_contact.html">Contacts</a></li>
-                                                </ul>
-                                            </div>
+                                            @Html.ActionLink("Blogs", "Index", "Blog")
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="page-header__sing-in"><a class="sing-in" href="#!"> <i class="fas fa-sign-in-alt"></i><span>Sign in or Register</span></a></div>
+                            <div class="page-header__sing-in"><a class="sing-in" href=""> <i class="fas fa-sign-in-alt"></i><span>@Html.ActionLink("Sign in or Register", "Login", "Security")</span></a></div>
                             <div class="page-header__btn"> <a class="uk-button uk-button-danger" href="03_city-listings.html"> <span data-uk-icon="plus"></span><span>ADD A PLACE</span></a></div>
                             <div class="page-header__btn-menu"><a href="#offcanvas" data-uk-toggle data-uk-icon="menu"></a></div>
                         </div>
