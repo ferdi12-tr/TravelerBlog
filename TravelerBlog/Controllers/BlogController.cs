@@ -25,11 +25,15 @@ namespace TravelerBlog.Controllers
             {
                 return RedirectToAction("Index", "City"); // TO-DO change redirection
             }
+
+            var city = _db.Cities.Find(cityId);
+            ViewBag.CityName = city.CityName;
+
             var relation = _db.BlogCityRelations
                                 .Where(x => x.CityId == cityId)
                                 .Include(x => x.BlogPost).ToList();
 
-            if (relation.Count == 0)
+            if (relation.Count == 0 || city == null)
             {
                 return RedirectToAction("Index", "City");// TODO change redirection
             }
