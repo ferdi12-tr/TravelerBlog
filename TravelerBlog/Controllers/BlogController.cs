@@ -13,6 +13,7 @@ namespace TravelerBlog.Controllers
     {
         DataContext _db = new DataContext();
 
+        [Authorize]
         public ActionResult Index()
         {
             // To add blog 

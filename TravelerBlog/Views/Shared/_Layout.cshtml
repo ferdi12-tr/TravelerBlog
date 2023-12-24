@@ -36,24 +36,15 @@
                                 <nav class="mainmenu" data-uk-navbar="">
                                     <ul class="uk-navbar-nav">
                                         <li>
-                                            <a href="01_home-1.html"> Home<span class="uk-icon" data-uk-icon="chevron-down"></span></a>
-                                            <div class="uk-navbar-dropdown">
-                                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                    <li><a href="01_home.html">Home page 1</a></li>
-                                                    <li><a href="02_home-header-style.html">Home page 2</a></li>
-                                                </ul>
-                                            </div>
+                                            @Html.ActionLink("Home", "Index", "Home")
                                         </li>
                                         <li>
                                             @Html.ActionLink("City List", "Index", "City")
                                         </li>
-                                        <li>
-                                            @Html.ActionLink("Blogs", "Index", "Blog")
-                                        </li>
                                     </ul>
                                 </nav>
                             </div>
-                            @if (HttpContext.Current.User.Identity.Name.IsEmpty())
+                            @if (!User.Identity.IsAuthenticated)
                             {
                                 <div class="page-header__sing-in"><a class="sing-in" href=""> <i class="fas fa-sign-in-alt"></i><span>@Html.ActionLink("Sign in or Register", "Login", "Security")</span></a></div>
                             }
@@ -61,8 +52,9 @@
                             {
                                 <div class="page-header__sing-in"><a class="sing-in" href=""> <i class="fas fa-sign-in-alt"></i><span>@Html.ActionLink("Log Out", "LogOut", "Security")</span></a></div>
                             }
-                            <div class="page-header__btn"> <a class="uk-button uk-button-danger" href="03_city-listings.html"> <span data-uk-icon="plus"></span><span>ADD A PLACE</span></a></div>
-                            <div class="page-header__btn-menu"><a href="#offcanvas" data-uk-toggle data-uk-icon="menu"></a></div>
+                            <div class="page-header__btn"> <a class="uk-button uk-button-danger" href="@Url.Action("Index", "Blog")"> <span data-uk-icon="plus"></span><span>ADD BLOG POST</span></a></div>
+                            
+                            <div class="page-header__btn-menu"><a href="" data-uk-toggle data-uk-icon="menu"></a></div>
                         </div>
                     </div>
                 </div>
