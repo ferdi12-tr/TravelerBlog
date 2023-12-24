@@ -360,6 +360,7 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\City\Index.cshtml" />
     <Content Include="Views\Blog\BlogForCity.cshtml" />
+    <Content Include="Views\Blog\ReadBlogPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

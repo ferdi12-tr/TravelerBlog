@@ -17,7 +17,7 @@
                             <img class="city-item__img" src="~/Content/assets/img/img-city-2.jpg" alt="city" data-uk-cover="data-uk-cover" />
                             <div class="uk-overlay-primary uk-position-cover"></div>
                             <div class="city-item__content uk-position-bottom">
-                                @Html.ActionLink(city.CityName, "BlogForCity", "Blog", new { id = city.Id }, new { @class = "city-item__city" })
+                                @Html.ActionLink(city.CityName, "BlogForCity", "Blog", new { cityId = city.Id }, new { @class = "city-item__city" })
                                 <div class="city-item__country">Türkiye</div>
                             </div>
                             <div class="uk-position-top-right">
