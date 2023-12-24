@@ -5,5 +5,122 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Content</h2>
+@*<h2>@Model.Content</h2>*@
+
+<div class="page-content">
+    <div class="uk-section-large uk-container">
+        <div class="uk-grid uk-grid-medium" data-uk-grid="">
+            <div class="uk-width-2-3@m">
+                <article class="article-full">
+                    <div class="article-full__head">
+                        <div class="article-full__info">
+                            <div class="article-full__author"><i class="icon-user"></i><a href="">Ben Jason</a></div>
+                            <div class="article-full__date"><i class="icon-calendar"></i><span>@Model.BlogCreatedDate.ToString("dd/MM/yyyy")</span></div>
+                            <div class="article-full__category"><i class="icon-folder-alt"></i><a href="">Vacations, Break</a></div>
+                            <div class="article-full__comments"><i class="icon-bubbles"></i><a href="" data-uk-scroll="offset: 120">513</a></div>
+                        </div>
+                        <h3 class="article-full__title">@Model.Title</h3>
+                    </div>
+                    <div class="article-full__image shine" data-uk-lightbox=""><a href=""><img src="~/Content/assets/img/img-article-full-1.jpg" alt="img-article"></a></div>
+                    <div class="uk-margin-medium-top article-full__content">
+                        <p>@Model.Content</p>
+                        <div class="uk-grid uk-grid-medium uk-child-width-1-2@s uk-margin-medium" data-uk-grid="" data-uk-lightbox="">
+                            <div><a class="shine" href=""><img class="uk-border-rounded uk-width-1-1" src="~/Content/assets/img/img-article-gallery-1.jpg" alt="gallery"></a></div>
+                            <div><a class="shine" href=""><img class="uk-border-rounded uk-width-1-1" src="~/Content/assets/img/img-article-gallery-2.jpg" alt="gallery"></a></div>
+                        </div>
+                    </div>
+                    <div class="article-full__bottom" id="article-bottom">
+                        <div class="article-full__tags">
+                            <ul class="tags-list">
+                                <li><a href="">Food & Drink</a></li>
+                                <li> <a href="">Life Style</a></li>
+                                <li><a href="">Travel</a></li>
+                            </ul>
+                        </div>
+                        <div class="article-full__share"><a class="share-link" href=""><i class="icon-share"></i><span>Share This</span></a></div>
+                    </div>
+                    <div class="section-article-reviews" id="article-reviews">
+                        <div class="uk-grid uk-child-width-auto@s uk-flex-middle uk-flex-between uk-margin-medium-bottom" data-uk-grid="">
+                            <div>
+                                <div class="uk-h2 uk-margin-remove"><span class="icon-star"> </span>Post Comments</div>
+                            </div>
+                            <div><a class="uk-button uk-button-danger" href="" data-uk-scroll="offset: 50">Add a comment</a></div>
+                        </div>
+                        <div class="uk-comment">
+                            <div class="uk-comment-header">
+                                <div class="uk-grid-medium uk-flex-middle" data-uk-grid="">
+                                    <div class="uk-width-auto"><img class="uk-comment-avatar" src="~/Content/assets/img/avatar-1.png" width="60" height="60" alt=""></div>
+                                    <div class="uk-width-expand">
+                                        <div data-uk-grid="">
+                                            <div>
+                                                <div class="uk-comment-title uk-margin-small-bottom">Linus William</div>
+                                                <div class="uk-comment-meta">1 day Ago</div>
+                                            </div>
+                                            <div>
+                                                <ul class="stars-list">
+                                                    <li><i class="far fa-star"></i></li>
+                                                    <li><i class="far fa-star"></i></li>
+                                                    <li><i class="far fa-star"></i></li>
+                                                    <li><i class="far fa-star"></i></li>
+                                                    <li><i class="far fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-comment-body">
+                                <p>It was indeed very good and fantastic to dine here and stay. The atmosphere electrifying. Prices was also very reasonable and service was awesome.</p>
+                            </div>
+                        </div>
+                        <div class="uk-comment">
+                            <div class="uk-comment-header">
+                                <div class="uk-grid-medium uk-flex-middle" data-uk-grid="">
+                                    <div class="uk-width-auto"><img class="uk-comment-avatar" src="~/Content/assets/img/avatar-2.png" width="60" height="60" alt=""></div>
+                                    <div class="uk-width-expand">
+                                        <div data-uk-grid="">
+                                            <div>
+                                                <div class="uk-comment-title uk-margin-small-bottom">Ameda Hilson</div>
+                                                <div class="uk-comment-meta">1 day Ago</div>
+                                            </div>
+                                            <div>
+                                                <ul class="stars-list">
+                                                    <li><i class="far fa-star"></i></li>
+                                                    <li><i class="far fa-star"></i></li>
+                                                    <li><i class="far fa-star"></i></li>
+                                                    <li><i class="far fa-star"></i></li>
+                                                    <li><i class="far fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-comment-body">
+                                <p>It was indeed very good and fantastic to dine here and stay. The atmosphere electrifying. Prices was also very reasonable and service was awesome.</p>
+                            </div>
+                        </div>
+                        <div class="add-reviews-form" id="add-reviews">
+                            <div class="uk-h2"> <span class="icon-star"></span>Leave A Reply</div>
+                            <form>
+                                <!-- Hidden Required Fields -->
+                                <input type="hidden" name="project_name" value="Ecata - City Portal">
+                                <input type="hidden" name="admin_email" value="chernyh.mihail@gmail.com">
+                                <input type="hidden" name="form_subject" value="Add Review">
+                                <!-- END Hidden Required Fields -->
+                                <div class="uk-grid uk-grid-medium uk-child-width-1-1" data-uk-grid="">
+                                    <div><textarea class="uk-textarea" name="review" placeholder="Write your review..." required=""></textarea></div>
+                                    <div><input class="uk-input" type="text" name="fio" placeholder="Your Name *" required=""></div>
+                                    <div><input class="uk-input" type="text" name="email" placeholder="Your Email *" required=""></div>
+                                    <div><label> <input class="uk-checkbox" type="checkbox" checked=""><span class="uk-margin-small-left">Save my name and email details for future use</span></label></div>
+                                    <div><button class="uk-button uk-button-danger uk-button-large" type="submit">Send comment</button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
 
