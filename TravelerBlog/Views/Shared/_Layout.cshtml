@@ -53,7 +53,14 @@
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="page-header__sing-in"><a class="sing-in" href=""> <i class="fas fa-sign-in-alt"></i><span>@Html.ActionLink("Sign in or Register", "Login", "Security")</span></a></div>
+                            @if (HttpContext.Current.User.Identity.Name.IsEmpty())
+                            {
+                                <div class="page-header__sing-in"><a class="sing-in" href=""> <i class="fas fa-sign-in-alt"></i><span>@Html.ActionLink("Sign in or Register", "Login", "Security")</span></a></div>
+                            }
+                            else
+                            {
+                                <div class="page-header__sing-in"><a class="sing-in" href=""> <i class="fas fa-sign-in-alt"></i><span>@Html.ActionLink("Log Out", "LogOut", "Security")</span></a></div>
+                            }
                             <div class="page-header__btn"> <a class="uk-button uk-button-danger" href="03_city-listings.html"> <span data-uk-icon="plus"></span><span>ADD A PLACE</span></a></div>
                             <div class="page-header__btn-menu"><a href="#offcanvas" data-uk-toggle data-uk-icon="menu"></a></div>
                         </div>
