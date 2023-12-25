@@ -13,6 +13,8 @@ namespace TravelerBlog.Controllers
     public class BlogController : Controller
     {
         DataContext _db = new DataContext();
+        BlogProcess _blogProcess = new BlogProcess();
+        UserProcess _userProcess = new UserProcess();
 
         [Authorize]
         public ActionResult Index()
@@ -81,9 +83,28 @@ namespace TravelerBlog.Controllers
         }
 
         [HttpPost]
-        public ActionResult Comment(string Comment)
+        public ActionResult AddComment(string comment, int currentBlogId)
         {
-            return RedirectToAction("Index", "Home");
+            BlogComment blogComment = new BlogComment()
+            {
+                Comment = comment,
+                BlogCommentDate = DateTime.Now,
+                Status= true,
+            };
+            var addedComment = _blogProcess.AddComment(blogComment);
+
+
+            var user = _userProcess.Get(User.Identity.Name);
+            CommentPostRelation relation = new CommentPostRelation() 
+            { 
+                UserId = user.Id,
+                BlogCommentId = addedComment.Id,
+                BlogPostId = currentBlogId
+            };
+
+            _blogProcess.AddCommentPostRelation(relation);
+            return RedirectToAction("ReadBlogPost", new { blogPostId = currentBlogId });
+            
         }
     }
 }

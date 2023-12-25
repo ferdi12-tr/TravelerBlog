@@ -64,6 +64,20 @@ namespace TravelerBlog.Entity
             }
         }
 
+        public User Get(string email)
+        {
+            try
+            {
+                var user = _db.Users.FirstOrDefault(x => x.Email == email);
+                return user;
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+        }
+
         public List<User> GetAll()
         {
             try

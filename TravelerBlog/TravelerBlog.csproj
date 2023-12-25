@@ -131,6 +131,7 @@
     <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
+    <Compile Include="Entity\BlogProcess.cs" />
     <Compile Include="Entity\DataContext.cs" />
     <Compile Include="Entity\Interfaces\ICrud.cs" />
     <Compile Include="Entity\RoleProcess.cs" />
@@ -366,7 +367,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\assets\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
