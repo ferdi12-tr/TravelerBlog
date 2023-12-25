@@ -129,7 +129,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CityController.cs" />
-    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Entity\DataContext.cs" />
@@ -363,7 +362,7 @@
     <Content Include="Views\City\Index.cshtml" />
     <Content Include="Views\Blog\BlogForCity.cshtml" />
     <Content Include="Views\Blog\ReadBlogPost.cshtml" />
-    <Content Include="Views\Comment\DisplayComments.cshtml" />
+    <Content Include="Views\Blog\DisplayComments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

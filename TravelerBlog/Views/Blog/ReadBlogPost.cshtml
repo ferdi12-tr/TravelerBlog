@@ -45,21 +45,13 @@
                             </div>
                         </div>
 
-                        @Html.Action("DisplayComments", "Comment", new {currentBlogId = currentBlogId})
+                        @Html.Action("DisplayComments", "Blog", new { currentBlogId = currentBlogId })
 
                         <div class="add-reviews-form" id="add-reviews">
                             <div class="uk-h2"> <span class="icon-star"></span>Leave A Reply</div>
-                            <form>
-                                <!-- Hidden Required Fields -->
-                                <input type="hidden" name="project_name" value="Ecata - City Portal">
-                                <input type="hidden" name="admin_email" value="chernyh.mihail@gmail.com">
-                                <input type="hidden" name="form_subject" value="Add Review">
-                                <!-- END Hidden Required Fields -->
+                            <form method="post">
                                 <div class="uk-grid uk-grid-medium uk-child-width-1-1" data-uk-grid="">
-                                    <div><textarea class="uk-textarea" name="review" placeholder="Write your review..." required=""></textarea></div>
-                                    <div><input class="uk-input" type="text" name="fio" placeholder="Your Name *" required=""></div>
-                                    <div><input class="uk-input" type="text" name="email" placeholder="Your Email *" required=""></div>
-                                    <div><label> <input class="uk-checkbox" type="checkbox" checked=""><span class="uk-margin-small-left">Save my name and email details for future use</span></label></div>
+                                    <div><textarea class="uk-textarea" name="comment" id="comment" placeholder="Write your comment..." required=""></textarea></div>
                                     <div><button class="uk-button uk-button-danger uk-button-large" type="submit">Send comment</button></div>
                                 </div>
                             </form>
