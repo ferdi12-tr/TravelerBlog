@@ -56,6 +56,7 @@ namespace TravelerBlog.Controllers
             {
                 return RedirectToAction("Index", "City");// TODO change redirection
             }
+            ViewBag.CurrentBlogId = blogPostId; // to get comments about that blogpost
             return View(blogPost);
         }
     }
