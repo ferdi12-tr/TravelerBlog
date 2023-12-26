@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Mapping;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using TravelerBlog.Models;
 
 namespace TravelerBlog.Entity
@@ -56,6 +58,19 @@ namespace TravelerBlog.Entity
             catch (Exception e)
             {
 
+                throw new Exception(e.Message);
+            }
+        }
+
+        public List<BlogPost> GetRecentBlogPosts() 
+        {
+            try
+            {
+                var recentPosts = _db.BlogPosts.OrderByDescending(p => p.BlogCreatedDate).Take(3).ToList();
+                return recentPosts;
+            }
+            catch (Exception e)
+            {
                 throw new Exception(e.Message);
             }
         }

@@ -31,7 +31,7 @@
                                 <div class="blog-card__category"> <span class="icon-folder"> </span>Vacations, Break</div>
                                 <div class="blog-card__author">Ben Jason</div>
                             </div>
-                            @Html.ActionLink(post.Title, "ReadBlogPost", new {blogPostId = post.Id}, new {@class= "blog-card__title" })
+                            @Html.ActionLink(post.Title.Substring(0, 30) + "...", "ReadBlogPost", new {blogPostId = post.Id}, new {@class= "blog-card__title" })
                             <div class="blog-card__intro">
                                 <p>@post.Content.Substring(0, 100) ...</p>
                             </div>
