@@ -15,12 +15,22 @@ namespace TravelerBlog.Controllers
         DataContext _db = new DataContext();
         BlogProcess _blogProcess = new BlogProcess();
         UserProcess _userProcess = new UserProcess();
+        CityProcess _cityProcess = new CityProcess();
 
         [Authorize]
         public ActionResult Index()
         {
-            // To add blog 
-            return View();
+            var cities = _cityProcess.GetCities();
+            return View(cities);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Index(string title, int cityId, string content) 
+        {
+            var newBlogPost = _blogProcess.AddBlogPost(title, content);
+            _cityProcess.AddBlogCityRelation(cityId, newBlogPost.Id);
+            return RedirectToAction("ReadBlogPost", "Blog", new { blogPostId = newBlogPost.Id});
         }
 
         public ActionResult BlogForCity(int cityId = 0) 

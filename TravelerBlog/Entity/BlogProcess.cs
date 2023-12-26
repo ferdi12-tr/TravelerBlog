@@ -38,5 +38,26 @@ namespace TravelerBlog.Entity
                 throw new Exception(e.Message);
             }
         }
+
+        public BlogPost AddBlogPost(string title, string content)
+        {
+            try
+            {
+                var newBlogPost = _db.BlogPosts.Add(new BlogPost()
+                {
+                    Title = title,
+                    Content = content,
+                    BlogCreatedDate = DateTime.Now,
+                });
+                _db.SaveChanges();
+
+                return newBlogPost;
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+        }
     }
 }
