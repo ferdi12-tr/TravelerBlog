@@ -366,6 +366,7 @@
     <Content Include="Views\Blog\ReadBlogPost.cshtml" />
     <Content Include="Views\Blog\DisplayComments.cshtml" />
     <Content Include="Views\Home\RecentBlogPosts.cshtml" />
+    <Content Include="Views\Home\PopularCities.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
