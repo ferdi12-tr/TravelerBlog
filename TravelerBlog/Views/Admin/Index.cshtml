@@ -1,8 +1,27 @@
-﻿
+﻿@model List<TravelerBlog.Providers.UserCommentProvider>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
+<table class="table table-striped ms-3">
+    <thead>
+        <tr>
+            <th scope="col">User</th>
+            <th scope="col">Comment</th>
+            <th scope="col">Date</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var comment in Model)
+        {
+            <tr>
+                <td>@comment.User.UserName</td>
+                <td>@comment.BlogComment.Comment</td>
+                <td>@comment.BlogComment.BlogCommentDate</td>
+                <td><div class="btn btn-success btn-sm">@Html.ActionLink("Approve", "ApproveComment", new { @commentId = comment.BlogComment.Id }, new { @class = "text-light" })</div></td>
+            </tr>
+        }
+    </tbody>
+</table>

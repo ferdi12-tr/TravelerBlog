@@ -134,6 +134,7 @@
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Entity\BlogProcess.cs" />
     <Compile Include="Entity\CityProcess.cs" />
+    <Compile Include="Entity\CommentProcess.cs" />
     <Compile Include="Entity\DataContext.cs" />
     <Compile Include="Entity\Interfaces\ICrud.cs" />
     <Compile Include="Entity\RoleProcess.cs" />

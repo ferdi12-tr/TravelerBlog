@@ -26,14 +26,14 @@ namespace TravelerBlog.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult Index(string title, int cityId, string content) 
+        public ActionResult Index(string title, int cityId, string content)
         {
             var newBlogPost = _blogProcess.AddBlogPost(title, content);
             _cityProcess.AddBlogCityRelation(cityId, newBlogPost.Id);
             return RedirectToAction("ReadBlogPost", "Blog", new { blogPostId = newBlogPost.Id});
         }
 
-        public ActionResult BlogForCity(int cityId = 0) 
+        public ActionResult BlogForCity(int cityId = 0)
         {
             if (cityId == 0)
             {
@@ -78,7 +78,7 @@ namespace TravelerBlog.Controllers
             var result = _db.CommentPostRelations
                             .Where(x => x.BlogPostId == currentBlogId)
                             .Include(x => x.BlogComment)
-                            .Include(x => x.User);
+                            .Include(x => x.User).Where(x => x.BlogComment.Status);
 
             List<UserCommentProvider> comments = new List<UserCommentProvider>();
             foreach (var comment in result)
@@ -99,14 +99,14 @@ namespace TravelerBlog.Controllers
             {
                 Comment = comment,
                 BlogCommentDate = DateTime.Now,
-                Status= true,
+                Status = false,
             };
             var addedComment = _blogProcess.AddComment(blogComment);
 
 
             var user = _userProcess.Get(User.Identity.Name);
-            CommentPostRelation relation = new CommentPostRelation() 
-            { 
+            CommentPostRelation relation = new CommentPostRelation()
+            {
                 UserId = user.Id,
                 BlogCommentId = addedComment.Id,
                 BlogPostId = currentBlogId
@@ -114,7 +114,7 @@ namespace TravelerBlog.Controllers
 
             _blogProcess.AddCommentPostRelation(relation);
             return RedirectToAction("ReadBlogPost", new { blogPostId = currentBlogId });
-            
+
         }
     }
 }
