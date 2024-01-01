@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\UserCommentProvider.cs" />
+    <Compile Include="Providers\UserRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\all.min.css" />
@@ -367,6 +369,7 @@
     <Content Include="Views\Blog\DisplayComments.cshtml" />
     <Content Include="Views\Home\RecentBlogPosts.cshtml" />
     <Content Include="Views\Home\PopularCities.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -35,6 +35,12 @@
                             <div class="page-header__mainmenu">
                                 <nav class="mainmenu" data-uk-navbar="">
                                     <ul class="uk-navbar-nav">
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <li>
+                                                @Html.ActionLink("Admin Panel", "Index", "Admin")
+                                            </li>
+                                        }
                                         <li>
                                             @Html.ActionLink("Home", "Index", "Home")
                                         </li>
